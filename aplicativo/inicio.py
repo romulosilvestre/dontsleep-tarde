@@ -1,6 +1,6 @@
-import cv2
+import cv2 #pip install opencv-python
 #importando mediapipe
-import mediapipe as mp
+import mediapipe as mp #pip install mediapipe
 
 # capturar a camêra
 cap = cv2.VideoCapture(1)
