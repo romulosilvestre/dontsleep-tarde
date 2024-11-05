@@ -1,3 +1,9 @@
+#TODO: Objetivo
+  # 1. Capturar video usando OpenCV 
+  # 2. Processar o frame usando MediaPipe
+  # 3. Desenhar os pontos  
+
+
 import cv2 #pip install opencv-python
 #importando mediapipe
 import mediapipe as mp #pip install mediapipe
@@ -21,7 +27,7 @@ with mp_face_mesh.FaceMesh(min_detection_confidence=0.5,min_tracking_confidence=
             continue
         # transformando de BGR para RGB
         frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
-        # processar o frame (OpenCV - MediaPipe)
+        #FIXME: processar o frame (OpenCV - MediaPipe)
         saida_facemesh = facemesh.process(frame)
         # transformando de RGB para BGR
         frame = cv2.cvtColor(frame,cv2.COLOR_RGB2BGR)
@@ -35,6 +41,7 @@ with mp_face_mesh.FaceMesh(min_detection_confidence=0.5,min_tracking_confidence=
             # 1 - frame : representa o frame de vídeo
             # 2 - face_landmarks: os landmarks detectados - pontos específicos
             # 3 - FACEMESH_CONTOURS - é uma constante que representa os contornos da face na malha facial.
+            # FIXME:face_landmarks - lista de pontos (usado no projeto)
             mp_drawing.draw_landmarks(frame,face_landmarks,mp_face_mesh.FACEMESH_CONTOURS)              
 
         cv2.imshow('Camera',frame)
@@ -44,3 +51,9 @@ with mp_face_mesh.FaceMesh(min_detection_confidence=0.5,min_tracking_confidence=
 #fecha a captura
 cap.release()
 cv2.destroyAllWindows()
+
+
+# pip install opencv-python
+# pip install mediapipe
+# pip install pygame
+# pip freeze >> requirements.txt
