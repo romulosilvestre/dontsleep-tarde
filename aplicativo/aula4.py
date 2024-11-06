@@ -88,7 +88,7 @@ with mp_face_mesh.FaceMesh(min_detection_confidence=0.5,min_tracking_confidence=
                 if id_coord in p_olhos:
                     coord_cv = mp_drawing._normalized_to_pixel_coordinates(coord_xyz.x,coord_xyz.y,largura,comprimento)
                     cv2.circle(frame,coord_cv,2,(255,0,0),-1)
-            #FIXME: aula_amanha (chamar o cálculo EAR )
+            #FIXME: aula_amanha (chamar o cálculo EAR )gi
         cv2.imshow('Camera',frame)
 
         if cv2.waitKey(10) & 0xFF == ord('c'):
